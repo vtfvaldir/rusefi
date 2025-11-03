@@ -358,13 +358,15 @@ jobs:
         name: rusefi_bundle_${{matrix.build-target}}.zip
         path: ./artifacts/rusefi_bundle_${{matrix.build-target}}.zip
 
-    - name: Upload github action autoupdate artifact
-      uses: actions/upload-artifact@v5
-      with:
-        name: rusefi_bundle_${{matrix.build-target}}_autoupdate.zip
-          - name: Upload firmware
-    uses: actions/upload-artifact@v3
-    with:
-      name: rusefi_firmware
-      path: firmware/build/rusefi/*.bin
+         - name: Upload github action autoupdate artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: rusefi_bundle_${{matrix.build-target}}_autoupdate.zip
+          path: firmware/build/rusefi/rusefi_bundle_${{matrix.build-target}}_autoupdate.zip
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: rusefi_firmware
+          path: firmware/build/rusefi/*.bin
         path: ./artifacts/rusefi_bundle_${{matrix.build-target}}_autoupdate.zip
