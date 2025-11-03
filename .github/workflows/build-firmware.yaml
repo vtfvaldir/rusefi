@@ -362,4 +362,9 @@ jobs:
       uses: actions/upload-artifact@v5
       with:
         name: rusefi_bundle_${{matrix.build-target}}_autoupdate.zip
+          - name: Upload firmware
+    uses: actions/upload-artifact@v3
+    with:
+      name: rusefi_firmware
+      path: firmware/build/rusefi/*.bin
         path: ./artifacts/rusefi_bundle_${{matrix.build-target}}_autoupdate.zip
